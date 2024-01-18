@@ -1,16 +1,6 @@
-Business Need: To allow employees to log in and keep non-employees out
+Business Need: Allow properly filled out forms to be stored
 
-  Scenario: Logging in with valid credentials
-    Given I move to the sign in page
-    When I enter valid credentials
-    Then I should be logged in
-
-
-  Scenario Outline: Logging in with invalid credentials
-    Given I move to the sign in page
-    When I enter an invalid "username" and "password" combination
-    Then I should be denied access
-    Examples:
-      | username | password |
-      | q        | a        |
-      | c        | v        |
+  Scenario: Logging in with invalid credentials
+    Given I move to the "Forms" page
+    When Correctly filling in the form with validations
+    Then The form should submit

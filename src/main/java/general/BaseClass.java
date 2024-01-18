@@ -19,16 +19,14 @@ public class BaseClass {
      */
 
     public void setupFromBaseClass() {
-        System.out.println("base class setup");
         element = new ElementHelper();
         wait = new WaitHelper();
         driver = Driver.setDriver();
         jsExecutor = (JavascriptExecutor) driver;
-        driver.get("https://www.amazon.com/");
+        driver.get("https://play1.automationcamp.ir/");
     }
 
     public void teardownFromBaseClass() {
-        System.out.println("Base class teardown");
         driver.quit();
     }
 
