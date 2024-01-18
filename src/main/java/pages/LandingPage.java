@@ -16,7 +16,7 @@ public class LandingPage extends BaseClass {
     @FindBy(xpath = "//div[@class='card-header']/h5")
     List<WebElement> cardHeaders;
 
-    @FindBy(xpath = "//div[@class='card-body']/a")
+    @FindBy(xpath = "//div[contains(@class,'card-body')]/a")
     List<WebElement> cardButtons;
 
     Map<String, WebElement> labelsAndCorrespondingButtons = new HashMap<>();
@@ -33,6 +33,7 @@ public class LandingPage extends BaseClass {
 
     private void initialize() {
         PageFactory.initElements(driver, this);
+        initializeMap();
     }
 
     public void moveToPage(String pageName) {

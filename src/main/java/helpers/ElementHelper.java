@@ -16,7 +16,8 @@ public class ElementHelper extends BaseClass {
     public void waitAndClick(WebElement element) {
         //TODO Add wait for network traffic && page loaded
         wait.waitForReadyElement(element);
-        jsExecutor.executeScript("arguments[0].click;", element);
+//        jsExecutor.executeScript("arguments[0].click;", element);
+        element.click();
     }
 
     public void waitAndSendKeys(WebElement element, String keysToEnter) {

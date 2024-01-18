@@ -30,5 +30,19 @@ public class FormsPage extends BaseClass {
         PageFactory.initElements(driver, this);
     }
 
+    public void fillForm(String city, String state, String zipcode) {
+        wait.waitForVisibleElement(cityInputField);
+        element.waitAndSendKeys(cityInputField, city);
+        element.waitAndSendKeys(stateInputField, state);
+        element.waitAndSendKeys(zipcodeInputField, zipcode);
+    }
+
+    public void submitForm() {
+        element.waitAndClick(checkbox);
+        element.waitAndClick(continueButton);
+    }
+
+
+
 
 }
