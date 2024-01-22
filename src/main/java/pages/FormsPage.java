@@ -1,9 +1,12 @@
 package pages;
 
 import general.BaseClass;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import java.util.List;
 
 public class FormsPage extends BaseClass {
 
@@ -37,9 +40,22 @@ public class FormsPage extends BaseClass {
         element.waitAndSendKeys(zipcodeInputField, zipcode);
     }
 
+    public void fillFormIncorrectly(String city, String state, String zipcode) {
+        wait.waitForVisibleElement(cityInputField);
+        element.waitAndSendKeys(cityInputField, city);
+        element.waitAndSendKeys(stateInputField, state);
+    }
+
     public void submitForm() {
         element.waitAndClick(checkbox);
         element.waitAndClick(continueButton);
+    }
+
+    public int getAmountOfErrors() {
+        List<WebElement> errorMessages = driver.findElements(By.xpath("//div[contains(@id,'invalid')]"));
+        return errorMessages.stream()
+                .filter(WebElement::isDisplayed)
+                .toList().size();
     }
 
 

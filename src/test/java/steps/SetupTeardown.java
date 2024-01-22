@@ -16,6 +16,6 @@ public class SetupTeardown extends BaseClass {
     @After
     public void teardown(Scenario scenario) {
         System.out.println("Scenario " + scenario.getName() + " has " + scenario.getStatus());
-        teardownFromBaseClass();
+        teardownFromBaseClass(scenario);
     }
 }
