@@ -29,6 +29,9 @@ public class RegistrationPage extends BaseClass {
     @FindBy(id = "submit_button")
     WebElement submitButton;
 
+    @FindBy(className = "text-success")
+    WebElement successMessage;
+
     public RegistrationPage() {
         initialize();
     }
@@ -45,6 +48,11 @@ public class RegistrationPage extends BaseClass {
         element.waitAndSendKeys(confirmPasswordInputField, testdata.get("password").asText());
         element.waitAndClick(termsAndConditionsCheckbox);
         element.waitAndClick(submitButton);
+    }
+
+    public boolean checkForSuccessMessage() {
+        initialize();
+        return successMessage.isDisplayed();
     }
 
 

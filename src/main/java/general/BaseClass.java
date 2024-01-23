@@ -33,6 +33,7 @@ public class BaseClass {
         if (scenario.getName().contains("[TC")) {
             try {
                 testdata = TestdataHelper.loadTestdata(scenario.getName());
+                TestdataHelper.initializeData();
             } catch (JsonProcessingException e) {
                 System.out.println(e.getMessage());
             }
