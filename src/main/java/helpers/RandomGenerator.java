@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class RandomGenerator {
 
-    public String generateRandomString() {
+    public static String generateRandomString() {
         int leftLimit = 97; // letter 'a'
         int rightLimit = 122; // letter 'z'
         int targetStringLength = 10;
@@ -18,7 +18,13 @@ public class RandomGenerator {
         return buffer.toString();
     }
 
-    public String generateRandomEmail() {
+    public static String generateRandomEmail() {
         return generateRandomString() + "@example.com";
     }
+
+    public static int generateRandomNumber() {
+        Random rand = new Random();
+        return rand.nextInt();
+    }
+
 }
