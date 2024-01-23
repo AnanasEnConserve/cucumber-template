@@ -1,6 +1,7 @@
 package pages;
 
 import general.BaseClass;
+import io.cucumber.core.internal.com.fasterxml.jackson.databind.JsonNode;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -34,6 +35,16 @@ public class RegistrationPage extends BaseClass {
 
     private void initialize() {
         PageFactory.initElements(driver, this);
+    }
+
+    public void fillForm(JsonNode testdata) {
+        element.waitAndSendKeys(firstNameInputField, testdata.get("firstName").asText());
+        element.waitAndSendKeys(lastNameInputField, testdata.get("lastName").asText());
+        element.waitAndSendKeys(emailInputField, testdata.get("email").asText());
+        element.waitAndSendKeys(passwordInputField, testdata.get("password").asText());
+        element.waitAndSendKeys(confirmPasswordInputField, testdata.get("password").asText());
+        element.waitAndClick(termsAndConditionsCheckbox);
+        element.waitAndClick(submitButton);
     }
 
 

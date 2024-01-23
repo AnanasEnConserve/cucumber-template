@@ -40,5 +40,7 @@ public class LoginPage extends BaseClass {
         element.waitAndClick(loginButton);
     }
 
-
+    public void clickRegisterAsNewUser() {
+        element.waitAndClick(registerLink);
+    }
 }

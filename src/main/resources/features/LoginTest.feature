@@ -8,7 +8,10 @@ Business Need: Users should be able to create an account and log in
 
 
   Scenario: Register as a new user (generate random name and email and password) [TC02]
-    Given I move to the "Forms" page
+    Given I move to the detail page
+    And I move to the registration page
+    When I fill in my personal information
+    Then I should be registered successfully
 
 
 
