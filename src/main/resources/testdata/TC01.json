@@ -1,0 +1,29 @@
+{
+  "play1": {
+    "homepage": {
+      "navPage": "Sample Pages"
+    },
+    "loginPage": {
+      "username": "admin",
+      "password": "admin",
+      "rememberMe": false
+    },
+    "pizzaPage": {
+      "size": "Small",
+      "flavor": "Pepperoni",
+      "sauce": "Barbeque",
+      "toppings": [
+        {
+          "topping": "onions"
+        },
+        {
+          "topping": "green olive"
+        },
+        {
+          "topping": "tomatoes"
+        }
+      ],
+      "quantity": 7
+    }
+  }
+}
