@@ -1,0 +1,18 @@
+{
+  "play1": {
+    "homepage": {
+      "navPage": "Sample Pages"
+    },
+    "registrationPage": {
+      "firstName": "<FIRSTNAME>",
+      "lastName": "<LASTNAME>",
+      "email": "<EMAIL>",
+      "password": "<PASSWORD>"
+    }
+  },
+  "loginPage": {
+    "username": "<EMAIL>",
+    "password": "<PASSWORD>",
+    "rememberMe": true
+  }
+}

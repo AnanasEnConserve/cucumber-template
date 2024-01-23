@@ -36,4 +36,22 @@ public class TestdataHelper extends BaseClass {
         return retrievedData;
     }
 
+    //Replaces specific placeholders
+    public static void replacePlaceholder(String target, String value) {
+        String testdataAsString = testdata.toString();
+        testdataAsString = testdataAsString.replace(target, value);
+        ObjectMapper objectMapper = new ObjectMapper();
+        try {
+            testdata = objectMapper.readTree(testdataAsString);
+        } catch (JsonProcessingException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    //Should be run at the start to generate all required data to run the test (e.g. names, ages..)
+    public static void initializeData() {
+
+    }
+
+
 }
