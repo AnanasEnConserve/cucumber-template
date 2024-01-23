@@ -1,6 +1,7 @@
 package pages;
 
 import general.BaseClass;
+import helpers.TestdataHelper;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -38,6 +39,10 @@ public class LandingPage extends BaseClass {
 
     public void moveToPage(String pageName) {
         element.waitAndClick(labelsAndCorrespondingButtons.get(pageName.toLowerCase()));
+    }
+
+    public void moveToPage() {
+        element.waitAndClick(labelsAndCorrespondingButtons.get(TestdataHelper.readTestdata("play1.homepage").get("navPage").asText().toLowerCase()));
     }
 
 }

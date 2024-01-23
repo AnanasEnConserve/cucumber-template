@@ -11,4 +11,11 @@ public class LandingPageSteps extends BaseClass {
         landingPage.moveToPage(pageName);
     }
 
+    @Given("I move to the detail page")
+    public void iMoveToTheDetailPage() throws InterruptedException {
+        LandingPage landingPage = new LandingPage();
+        landingPage.moveToPage();
+        Thread.sleep(5000);
+    }
+
 }
