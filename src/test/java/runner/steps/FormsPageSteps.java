@@ -1,6 +1,7 @@
-package steps;
+package runner.steps;
 
 import general.BaseClass;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
@@ -28,5 +29,11 @@ public class FormsPageSteps extends BaseClass {
     public void theFormShouldSubmit() {
         formsPage.submitForm();
         Assertions.assertEquals(0, formsPage.getAmountOfErrors(), "Found an unexpected error message");
+    }
+
+    @And("I click on the company logo")
+    public void iDoThink() {
+        formsPage = new FormsPage();
+        formsPage.clickLogo();
     }
 }

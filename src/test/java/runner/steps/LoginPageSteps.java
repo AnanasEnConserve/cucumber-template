@@ -1,4 +1,4 @@
-package steps;
+package runner.steps;
 
 import general.BaseClass;
 import io.cucumber.java.en.And;

@@ -1,7 +1,9 @@
-package steps;
+package runner.steps;
 
 import general.BaseClass;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import org.junit.jupiter.api.Assertions;
 import pages.LandingPage;
 
 public class LandingPageSteps extends BaseClass {
@@ -18,4 +20,8 @@ public class LandingPageSteps extends BaseClass {
         Thread.sleep(5000);
     }
 
+    @Then("I should be back on the homepage")
+    public void shouldBeOnHome() {
+        Assertions.assertEquals("https://play1.automationcamp.ir/index.html", driver.getCurrentUrl(), "URL different than expected");
+    }
 }

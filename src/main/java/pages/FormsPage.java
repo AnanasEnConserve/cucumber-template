@@ -25,6 +25,9 @@ public class FormsPage extends BaseClass {
     @FindBy(xpath = "//button")
     WebElement continueButton;
 
+    @FindBy(linkText = "The Playground")
+    WebElement companyLogo;
+
     public FormsPage() {
         initialize();
     }
@@ -56,6 +59,10 @@ public class FormsPage extends BaseClass {
         return errorMessages.stream()
                 .filter(WebElement::isDisplayed)
                 .toList().size();
+    }
+
+    public void clickLogo() {
+        element.waitAndClick(companyLogo);
     }
 
 
