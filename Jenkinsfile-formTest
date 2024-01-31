@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                bat 'mvn test -D"cucumber.filter.tags=@formtest"'
+                'mvn test -D"cucumber.filter.tags=@formtest"'
             }
             post {
                 always {
