@@ -23,8 +23,6 @@ pipeline {
                         skippedStepsNumber: -1,
                         sortingMethod: 'ALPHABETICAL',
                         undefinedStepsNumber: -1
-                    ]
-                    )
                 }
             }
         }
