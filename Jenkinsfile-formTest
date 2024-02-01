@@ -12,7 +12,18 @@ pipeline {
             }
             post {
                 always {
-                    junit 'target/surefire-reports/*.xml'
+                    publishHTML(
+                    [
+                    allowMissing: false,
+                    alwaysLinkToLastBuild: false,
+                    keepAll: false,
+                    reportDir: 'target/report/html/Extent.html',
+                    reportFiles: '*.html',
+                    reportName: 'HTML Report',
+                    reportTitles: '',
+                    useWrapperFileDirectly: true
+                    ]
+                    )
                 }
             }
         }
