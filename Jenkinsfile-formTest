@@ -17,7 +17,7 @@ pipeline {
                     allowMissing: false,
                     alwaysLinkToLastBuild: false,
                     keepAll: false,
-                    reportDir: 'target/report/html/Extent.html',
+                    reportDir: System.getProperty("user.dir")+'target/report/html/Extent.html',
                     reportFiles: '*.html',
                     reportName: 'HTML Report',
                     reportTitles: '',
