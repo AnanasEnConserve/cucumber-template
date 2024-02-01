@@ -13,10 +13,10 @@ pipeline {
             post {
                 always {
                     publishHTML(
-                    [
+                    target : [
                     allowMissing: false,
                     alwaysLinkToLastBuild: true,
-                    keepAll: false,
+                    keepAll: true,
                     reportDir: 'target/report/html/',
                     reportFiles: '*.html',
                     reportName: 'HTML Report',
