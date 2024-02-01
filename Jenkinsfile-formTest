@@ -17,7 +17,7 @@ pipeline {
                     allowMissing: false,
                     alwaysLinkToLastBuild: false,
                     keepAll: false,
-                    reportDir: System.getProperty("user.dir")+'target/report/html/Extent.html',
+                    reportDir: 'C:\develop\javaSelenium\template\target\report\html\Extent.html',
                     reportFiles: '*.html',
                     reportName: 'HTML Report',
                     reportTitles: '',
